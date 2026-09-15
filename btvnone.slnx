@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="btvnone.vcxproj" Id="496e3eb6-7edd-4351-8c0a-9bfe3be58e3e" />
+</Solution>
