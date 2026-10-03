@@ -1,152 +1,52 @@
-#define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
-#include<math.h>
-
-void lt1()
+#include <stdlib.h>
+#include <time.h>
+void btvn1()
 {
-	//int i = 0;
-	//// loop for 
-	////for (int i = 0; i < 5; i++)
-	////for (;;)
-	////{
-	////	if (i > 5)break;
-	////	
-	////	for (int i = 0; i < 5; i++)
-	////	{
-	////		if (i == 2) continue;
-	////	printf(" hello world : %d\n", i);
-	////	i++;
-	////}
-	//int tong = 0;
-	////for (i = 0; i <= 10; i++)
-	////{
-	////	tong = tong + i;
-	////	printf(" tong : %d\n", tong);
-	////}
-	////printf(" tong : %d\n", tong);
-	//int j = 0;
-	//int k = 0;
-	////while (k!=j)
-	////{
-	////	printf(" nhap j= k : ", j);
-	////	scanf_s("%d", &k);
-	////}
-	//do
-	//{
-	//	printf(" nhap gia tri k bang j: ");
-	//	scanf("%d", &k);
+	int i = 0, a, b;
+	printf(" nhap so nguyen a: \n");
+	scanf_s("%d", &a);
+	printf(" nhap so nguyen b: \n");
+	scanf_s("%d", &b);
+	while (b != 0)
+	{
+		int r = 0;
+		r = a % b;
+		a = b;
+		b = r;
+	}
+	printf("UCLN = %d", a);
 
-	//} while (k != j);
+
 }
-void bt1()
+void btvn2()
 {
-	int i = 0;
-	for (i = 2;i <= 9;i++)
-	{ 
-		if (i == 4)continue;
-		printf("bang cuu chuong: %d\n", i);
-		for (int n = 1;n <= 10;n++)
+	int soht, sonhap, solan = 0;
+	srand(time(NULL));
+	soht = rand() % 100 + 1;
+
+	do
+	{
+		printf("nhap so tu 1 den 100 : ");
+		scanf("%d", &sonhap);
+		solan++;
+		if (sonhap > soht)
 		{
-			printf(" %d*%d = %d\n",i, n, i*n);
+			printf(" nho hon");
+
 		}
-		printf("\n");
-		
-		
-	}
-}
-// bai tap 2 nhap vao so nguyen n tuwf ban phim tinh va in ra giai thua cua n
-void bt2()
-{
-	int n=0;
-	
-	int gt=1;
-	printf("nhap so nguyen n: ");
-	scanf_s("%d", &n);
-	for ( int i = 1; i <= n; i++)
-	 
-		
-		{ 
-			gt = (i ) * gt;
+		else if (sonhap < soht)
+		{
+			printf(" lon hon");
 		}
-		
+		else
+		{
+			printf(" ban dung va so lan nhap cua ban la : %d", solan);
+		} 
+	} while (sonhap != soht);
 
-	
-	printf(" giai thua cua %d = %d\n", n, gt);
 }
-void bt3()
-{
-	int n=0;
-	int nt = 0;
-	printf("nhap so nguyen n: ");
-	scanf_s("%d", &n);
-	for (int i = 3; i < n; i++)
-	{
-	
-		nt = (n) % i;
-		if (nt == 0) break;
-	}
-	if (nt != 0 || n==2)
-	{
-		printf(" %d la so  nguyen to \n", n);
-	}
-	else
-	{
-		printf(" %d ko ph la so  nguyen to \n", n);
-	}
-}
-void bt3_1()
-{
-
-	int n = 0;
-	int nt = 1;
-	printf("nhap so nguyen n: ");
-	scanf_s("%d", &n);
-	for (int i = 2; i < n; i++)
-	{
-		nt = (n) % i;
-		if (nt == 0) 
-		{ 
-			nt = 0;break;
-			}
-		
-
-    }
-	if (nt != 0 )
-	{
-		printf(" %d la so  nguyen to \n", n);
-	}
-	else
-	{
-		printf(" %d ko ph la so  nguyen to \n", n);
-	}
-}
-//bt4 nhap vao so nguyen n dem so luong chu so cua n va in ra.
-void bt4()
-{
-	int n=0 ;
-	int nt = 1;
-	int nc = 0;
-	printf("nhap so nguyen n: ");
-	scanf_s("%d", &n);
-	if (n == 0)
-	{
-		printf(" so luong so la : 1");
-	}
-	else
-	{
-	while (n!=0)
-	{
-			n = n / 10;
-			nc++;
-	}
-	
-	
-		printf(" so luong so la : %d", nc);
-	}
-	}
-	
-	
 void main()
 {
-	bt4();
- }
+	btvn2();
+}
